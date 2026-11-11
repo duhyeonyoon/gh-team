@@ -11,12 +11,21 @@
 3. **구성원 작업 현황 보기** — 구성원별 오픈 PR 목록과 리뷰 상태(리뷰 대기 / 리뷰중 / 승인됨 / 변경 요청됨 / 초안), 최근 머지된 PR
 4. **구성원 리뷰 현황 보기** — 구성원별 리뷰 요청받은 열린 PR 개수와 목록
 
-## 빌드 & 실행
+## 설치
 
 ```bash
-cargo build --release
-./target/release/gh-team
-# 또는 개발 중엔
+gh extension install duhyeonyoon/gh-team
+```
+
+설치 후 실행:
+
+```bash
+gh team
+```
+
+### 개발 중 로컬 실행
+
+```bash
 cargo run
 ```
 
@@ -24,15 +33,18 @@ cargo run
 
 토큰은 파일에 저장되지 않고 각자 환경변수로 설정합니다.
 
-```bash
-export GITHUB_TOKEN=ghp_xxxx
-```
-
 [github.com/settings/tokens](https://github.com/settings/tokens)에서 발급.
 private 레포를 조회하려면 classic 토큰은 `repo` 스코프,
 fine-grained 토큰은 대상 레포의 Pull requests **Read** 권한이 필요합니다.
 
-셸 프로필(`~/.zshrc` 등)에 넣어두면 편합니다.
+발급받은 토큰을 `~/.zshrc`에 추가하고 바로 적용합니다 (`ghp_xxxx`를 본인 토큰으로 바꾸세요):
+
+```bash
+echo 'export GITHUB_TOKEN=ghp_xxxx' >> ~/.zshrc && source ~/.zshrc
+```
+
+`>>`는 파일 끝에 덧붙이는 것이고, `>` 하나만 쓰면 기존 `~/.zshrc`가 통째로 덮어써지니 주의하세요.
+적용 확인: `echo $GITHUB_TOKEN`
 
 ## 설정 파일
 
