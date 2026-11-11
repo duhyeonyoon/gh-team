@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cargo build *)",
+      "Bash(grep -A2 'name = \"dialoguer\"' /Users/yunduhyeon/Desktop/gh-team/Cargo.lock; ls ~/.cargo/registry/src/*/dialoguer-*/src/prompts/ 2>/dev/null)",
+      "Read(//Users/yunduhyeon/.cargo/registry/src/**)",
+      "Bash(grep -n \"Key::Char\" ~/.cargo/registry/src/*/dialoguer-0.11.0/src/prompts/select.rs)",
+      "Bash(cargo install *)",
+      "Bash(grep -n -B2 -A1 '^\\\\s*\\\\.\\\\\\(members\\\\|repos\\\\\\)$' /Users/yunduhyeon/Desktop/gh-team/src/main.rs)",
+      "Bash(perl -0pi -e 's/let handles: Vec<_> = cfg\\\\n\\(\\\\s+\\)\\\\.\\(members|repos\\)\\\\n/let handles: Vec<_> = group\\\\n$1.$2\\\\n/g' src/main.rs)"
+    ]
+  }
+}
