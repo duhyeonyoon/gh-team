@@ -37,13 +37,22 @@ cargo run
 private 레포를 조회하려면 classic 토큰은 `repo` 스코프,
 fine-grained 토큰은 대상 레포의 Pull requests **Read** 권한이 필요합니다.
 
-발급받은 토큰을 `~/.zshrc`에 추가하고 바로 적용합니다 (`ghp_xxxx`를 본인 토큰으로 바꾸세요):
+발급받은 토큰을 `~/.zshrc`에 추가합니다.
 
-```bash
-echo 'export GITHUB_TOKEN=ghp_xxxx' >> ~/.zshrc && source ~/.zshrc
-```
+1. VS Code로 `~/.zshrc` 열기
 
-`>>`는 파일 끝에 덧붙이는 것이고, `>` 하나만 쓰면 기존 `~/.zshrc`가 통째로 덮어써지니 주의하세요.
+   ```bash
+   code ~/.zshrc
+   ```
+
+2. 맨 아래에 다음 줄을 추가하고 저장 (`ghp_xxxx`를 본인 토큰으로 바꾸세요)
+
+   ```bash
+   export GITHUB_TOKEN=ghp_xxxx
+   ```
+
+3. 새 터미널을 열면 자동으로 적용됩니다 (이미 열려 있던 터미널에서 바로 쓰려면 `source ~/.zshrc`)
+
 적용 확인: `echo $GITHUB_TOKEN`
 
 ## 설정 파일
